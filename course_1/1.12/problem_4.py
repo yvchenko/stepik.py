@@ -29,10 +29,12 @@ if room == "треугольник":
     p = (a + b + c) / 2
 
     print((p * (p - a) * (p - b) * (p - c))**0.5)
+
 elif room == "прямоугольник":
     a, b = int(input()), int(input())
 
     print(a * b)
+
 elif room == "круг":
     r = int(input())
 
