@@ -14,26 +14,19 @@
 number_1, number_2 = float(input()), float(input())
 operator = str(input())
 
-if operator == "+":
+if operator == "/" and number_2 == 0.0 or operator == "mod" and number_2 == 0.0 or operator == "div" and number_2 == 0.0:
+    print("Деление на 0!")
+elif operator == "+":
     print(number_1 + number_2)
 elif operator == "-":
     print(number_1 - number_2)
 elif operator == "/":
-    if number_2 == 0.0:
-        print("Деление на 0!")
-    else:
-        print(number_1 / number_2)
+    print(number_1 / number_2)
 elif operator == "*":
     print(number_1 * number_2)
 elif operator == "mod":
-    if number_2 == 0.0:
-        print("Деление на 0!")
-    else:
-        print(number_1 % number_2)
+    print(number_1 % number_2)
 elif operator == "pow":
     print(number_1 ** number_2)
 elif operator == "div":
-    if number_2 == 0.0:
-        print("Деление на 0!")
-    else:
-        print(number_1 // number_2)
+    print(number_1 // number_2)
