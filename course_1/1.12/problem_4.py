@@ -28,14 +28,16 @@ if room == "треугольник":
 
     p = (a + b + c) / 2
 
-    print((p * (p - a) * (p - b) * (p - c))**0.5)
+    result = (p * (p - a) * (p - b) * (p - c))**0.5
 
 elif room == "прямоугольник":
     a, b = int(input()), int(input())
 
-    print(a * b)
+    result = a * b
 
 elif room == "круг":
     r = int(input())
 
-    print(3.14 * r ** 2)
+    result = 3.14 * r ** 2
+
+print(result)
