@@ -8,7 +8,4 @@
 
 number = int(input())
 
-if -15 < number <= 12 or 14 < number < 17 or number >= 19:
-    print("True")
-else:
-    print("False")
+print(-15 < number <= 12 or 14 < number < 17 or number >= 19)
