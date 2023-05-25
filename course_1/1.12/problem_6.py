@@ -23,10 +23,10 @@
 n = int(input())
 
 if 10 < n % 100 < 15 or 5 <= n % 10 <= 9 or n % 10 == 0:
-    word = "программистов"
+    ending = "ов"
 elif n % 10 == 1:
-    word = "программист"
+    ending = ""
 elif 1 < n % 10 < 5 :
-    word = "программиста"
+    ending = "а"
 
-print(str(n) + " " + word)
+print(str(n) + " программист" + ending)
