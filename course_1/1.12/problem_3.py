@@ -12,9 +12,9 @@
 # Обратите внимание, что на вход программе приходят вещественные числа.
 
 number_1, number_2 = float(input()), float(input())
-operator = str(input())
+operator = input()
 
-if operator == "/" and number_2 == 0.0 or operator == "mod" and number_2 == 0.0 or operator == "div" and number_2 == 0.0:
+if (operator == "/" or operator == "mod" or operator == "div") and number_2 == 0.0:
     print("Деление на 0!")
 elif operator == "+":
     print(number_1 + number_2)
