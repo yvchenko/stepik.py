@@ -19,4 +19,3 @@ while slices % a != 0 or slices % b != 0:
     slices += 1
 
 print(slices)
-
