@@ -9,9 +9,14 @@
 #
 # Выводить нужно только слово "Счастливый" или "Обычный", с большой буквы.
 
-ticket = input()
+ticket = int(input())
 
-a, b, c, d, e, f = int(ticket[0]), int(ticket[1]), int(ticket[2]), int(ticket[3]), int(ticket[4]), int(ticket[5])
+a = ticket // 100000
+b = ticket // 10000 % 10
+c = ticket // 1000 % 10
+d = ticket // 100 % 10
+e = ticket // 10 % 10
+f = ticket % 10
 
 if a + b + c == d + e + f:
     print("Счастливый")
