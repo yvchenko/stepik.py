@@ -2,11 +2,11 @@
 #
 # Используйте метод split строки.
 
-a = [int(i) for i in input().split()]
+numbers = [int(i) for i in input().split()]
 
-sum_a = 0
+sum_all = 0
 
-for element in a:
-    sum_a += element
+for element in numbers:
+    sum_all += element
 
-print(sum_a)
+print(sum_all)
