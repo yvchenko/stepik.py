@@ -4,7 +4,7 @@
 number = 1
 total = 0
 
-while number != 0:
+while number:
     number = int(input())
     total += number
 
