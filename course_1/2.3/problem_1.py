@@ -14,7 +14,7 @@
 a, b, c, d = int(input()), int(input()), int(input()), int(input())
 
 for column in range(c, d + 1):
-    print('\t' + str(column), end='')
+    print('\t', column, end='')
 
 print('')
 
