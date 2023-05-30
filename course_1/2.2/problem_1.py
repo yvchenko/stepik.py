@@ -5,10 +5,9 @@
 # если число больше 100, то прекращаем считывать числа;
 # в остальных случаях вывести это число обратно на консоль в отдельной строке.
 
-while True:
+number = 0
+
+while number <= 100:
+    if number >= 10:
+        print(number)
     number = int(input())
-    if number < 10:
-        continue
-    if number > 100:
-        break
-    print(number)
