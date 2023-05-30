@@ -21,6 +21,5 @@ print('')
 for row in range(a, b + 1):
     print(row, end='\t')
     for column in range(c, d + 1):
-        result = (str(row * column))
-        print(result, end='\t')
+        print(row * column, end='\t')
     print('')
