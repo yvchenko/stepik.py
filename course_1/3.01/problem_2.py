@@ -3,9 +3,4 @@
 # требуется только изменение переданного списка.
 
 def modify_list(l):
-    new = []
-    for element in l:
-        if element % 2 == 0:
-            element //= 2
-            new.append(element)
-    l[:] = list(new)
+    l[:] = [element // 2 for element in l if element % 2 == 0]
