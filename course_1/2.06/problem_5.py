@@ -8,50 +8,45 @@ matrix = [[0 for x in range(n)] for y in range(n)]
 width = len(matrix[0])
 height = len(matrix)
 
-# add = 0
-#
-# l = 0
+add = 0
+
 x = 0
 y = 0
+number = 0
 
-for number in range(n ** 2):
+while True:
     number += 1
-    if x < n:
-        matrix[y][x] = number
-        x += 1
-    else:
+    matrix[y][x] = number
+    if x == n - 1:
+        y += 1
+        break
+    x += 1
+while True:
+    number += 1
+    matrix[y][x] = number
+    if y == n - 1:
         x -= 1
-        if y + 1 < n:
-            matrix[y][x] = number
-            y += 1
-        else:
-            y -= 1
-            if x < n:
-                matrix[y][x] = number
-                x -= 1
+        break
+    y += 1
+while True:
+    number += 1
+    matrix[y][x] = number
+    if x == 0:
+        y -= 1
+        break
+    x -= 1
+while True:
+    number += 1
+    matrix[y][x] = number
+    if y == 1:
+        x += 1
+        break
+    y -= 1
 
 
-# for y in range(n):
-#     for x in range(n):
-#         add += 1
-#         l = 0
-#         m = n
-#         ax = x
-#         ay = y
-#         if ax < m:
-#             ax += 1
-#         else:
-#             ay += 1
-#         if ay < n and ax < n:
-#             matrix[ay][ax] += add
-
-# for y in range(height):
-#     for x in range(width):
-#         add += 1
-#         matrix[y][x] += add
 
 
 for y in range(height):
     for x in range(width):
-        print(matrix[y][x], end=' ')
+        print(matrix[y][x], end='\t')
     print()
