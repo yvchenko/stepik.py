@@ -8,37 +8,15 @@
 # В случае одной строки/столбца элемент сам себе является соседом по соответствующему направлению.
 
 matrix = []
-row_input = ''
 
-while True:
+row_input = input()
+while row_input != 'end':
+    matrix.append([int(i) for i in row_input.split()])
     row_input = input()
-    if row_input == 'end':
-        break
-    else:
-        matrix.append([int(i) for i in row_input.split()])
 
-width = len(matrix[0])
-height = len(matrix)
-new_matrix = []
-
-for y in range(height):
-    row = []
-    for x in range(width):
-        left = matrix[y][x - 1]
-        if x + 1 == width:
-            right = matrix[y][0]
-        else:
-            right = matrix[y][x + 1]
-        up = matrix[y - 1][x]
-        if y + 1 == height:
-            down = matrix[0][x]
-        else:
-            down = matrix[y + 1][x]
-        sum_all = left + right + up + down
-        row.append(sum_all)
-    new_matrix.append(row)
-
-for y in range(height):
-    for x in range(width):
-        print(new_matrix[y][x], end=' ')
+for y in range(len(matrix)):
+    for x in range(len(matrix[y])):
+        vertical = matrix[y - 1][x] + matrix[(y + 1) % len(matrix)][x]
+        horizontal = matrix[y][x - 1] + matrix[y][(x + 1) % len(matrix[y])]
+        print(vertical + horizontal, end=' ')
     print()
