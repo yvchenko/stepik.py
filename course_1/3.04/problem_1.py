@@ -15,7 +15,7 @@
 
 import re
 
-with open(file='problem_1_dataset.txt') as dataset:
+with open('problem_1_dataset.txt') as dataset:
     compressed = dataset.readline()
 
 digits = '0123456789'
