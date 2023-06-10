@@ -11,14 +11,13 @@
 d = int(input())
 
 dictionary = []
+errors = set()
 
 for word in range(d):
     word = input().lower()
     dictionary.append(word)
 
 l = int(input())
-
-errors = set()
 
 for row in range(l):
     row = input().lower().split()
