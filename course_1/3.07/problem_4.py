@@ -19,8 +19,7 @@
 
 n = int(input())
 
-x = 0
-y = 0
+x, y = 0, 0
 
 for command in range(n):
     command = input().split()
