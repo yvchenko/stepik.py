@@ -10,10 +10,6 @@
 words = [i for i in input().lower().split()]
 
 counted = {}
-for word in words:
-    if word not in counted:
-        counted[word] = 1
-    else:
-        counted[word] += 1
+new = {word: words.count(word) for word in words if word not in counted}
 
-[print(key, counted[key]) for key in counted]
+[print(key, new[key]) for key in new]

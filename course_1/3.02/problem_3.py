@@ -8,14 +8,12 @@
 # в ограничение по времени, нужно избежать повторного вычисления значений.
 
 def f(x):
-    return x
+    return x + 1
 
 
 n = int(input())
 calculated = {}
 
-for xi in range(n):
-    xi = int(input())
-    if xi not in calculated:
-        calculated[xi] = f(xi)
-    print(calculated[xi])
+new = {xi: f(xi) for xi in [int(input()) for i in range(n)] if xi not in calculated}
+
+print(new)
