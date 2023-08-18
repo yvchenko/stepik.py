@@ -21,24 +21,13 @@ split = []
 part = ''
 
 length = len(compressed)
-expanded = []
+expanded = ''
 
 for i in range(length):
     part += str(compressed[i])
     if not compressed[(i + 1) % length].isdigit():
-        split.append(part)
+        expanded += (part[0] * int(part[1:]))
         part = ''
 
-for part in split:
-    letter = ''
-    amount = ''
-    for character in part:
-        if not character.isdigit():
-            letter = character
-        else:
-            amount += character
-    expanded.append(letter * int(amount))
-
 with open('problem_1_done.txt', 'w') as done:
-    for element in expanded:
-        done.write(element)
+    done.write(expanded)
