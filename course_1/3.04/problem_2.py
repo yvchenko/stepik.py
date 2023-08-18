@@ -9,17 +9,13 @@
 #
 # Слова, написанные в разных регистрах, считаются одинаковыми.
 
-with open('problem_2_dataset.txt') as dataset:
-    words = [i for i in dataset.read().lower().split()]
+# set().count() - вирішити через це
 
-counted = {}
-for word in words:
-    if word not in counted:
-        counted[word] = 1
-    else:
-        counted[word] += 1
+with open('problem_2_dataset.txt') as dataset:
+    words = dataset.read().lower().split()
+
+amount = max([words.count(word) for word in words])
+word = min([word for word in words if words.count(word) == amount])
 
 with open('problem_2_done.txt', 'w') as done:
-    amount = max([counted[key] for key in counted])
-    word = min({key for key in counted if counted[key] == amount})
     done.write(str(word) + ' ' + str(amount))
