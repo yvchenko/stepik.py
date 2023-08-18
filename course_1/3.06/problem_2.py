@@ -12,9 +12,8 @@ import requests
 with open('problem_2_dataset.txt') as source:
     address = source.readline().strip()
 
-file = requests.get(address)
 domain = 'https://stepic.org/media/attachments/course67/3.6.3/'
-file_content = file.text
+file_content = requests.get(address).text
 
 with open('problem_2_done.txt', 'w') as done:
     while "We" not in file_content:
