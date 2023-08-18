@@ -6,4 +6,4 @@
 
 from sys import argv
 
-[print(argv[i], end=' ') for i in range(1, len(argv))]
+print(*[argv[i] for i in range(1, len(argv))])
