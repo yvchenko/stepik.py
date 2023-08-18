@@ -15,8 +15,8 @@ import requests
 with open('problem_1_dataset.txt') as source:
     address = source.readline().strip()
 
-file = requests.get(address)
-lines = len(file.text.splitlines())
+response = requests.get(address)
+line_count = len(response.text.splitlines())
 
 with open('problem_1_done.txt', 'w') as done:
-    done.write(str(lines))
+    done.write(str(line_count))
