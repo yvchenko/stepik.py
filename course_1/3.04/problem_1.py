@@ -13,31 +13,32 @@
 # себе на компьютер. Запустите вашу программу, используя этот файл в качестве входных данных. Выходной файл, который
 # при этом у вас получится, надо отправить в качестве ответа на эту задачу.
 
-import re
 
 with open('problem_1_dataset.txt') as dataset:
-    compressed = dataset.readline()
-
-digits = '0123456789'
+    compressed = dataset.readline().strip()
 
 split = []
 part = ''
 
 length = len(compressed)
+expanded = []
 
 for i in range(length):
     part += str(compressed[i])
-    if compressed[(i + 1) % length] not in digits:
+    if not compressed[(i + 1) % length].isdigit():
         split.append(part)
         part = ''
 
+for part in split:
+    letter = ''
+    amount = ''
+    for character in part:
+        if not character.isdigit():
+            letter = character
+        else:
+            amount += character
+    expanded.append(letter * int(amount))
+
 with open('problem_1_done.txt', 'w') as done:
-    for part in split:
-        letter = ''
-        amount = ''
-        for character in part:
-            if character not in digits:
-                letter = character
-            else:
-                amount += character
-        done.write(letter * int(amount))
+    for element in expanded:
+        done.write(element)
