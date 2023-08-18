@@ -17,16 +17,14 @@
 with open('problem_1_dataset.txt') as dataset:
     compressed = dataset.readline().strip()
 
-split = []
 part = ''
-
 length = len(compressed)
 expanded = ''
 
 for i in range(length):
     part += str(compressed[i])
     if not compressed[(i + 1) % length].isdigit():
-        expanded += (part[0] * int(part[1:]))
+        expanded += part[0] * int(part[1:])
         part = ''
 
 with open('problem_1_done.txt', 'w') as done:
