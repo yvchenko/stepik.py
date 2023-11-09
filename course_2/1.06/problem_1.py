@@ -29,14 +29,25 @@ n = int(input())
 
 
 def is_parent(parent, child):
-    if child in classes.keys():
+    ind = 0
+    if child not in classes.keys():
+        return False
+    elif child == parent:
+        return True
+    else:
         if parent in classes[child]:
             return True
-        elif classes[child] == []:
+        elif not classes[child]:
             return False
         else:
-            for p in classes[child]:
-                return is_parent(parent, p)
+            if len(classes[child]) == 1:
+                return is_parent(parent, classes[child][ind])
+            else:
+                while ind + 1 < len(classes[child]):
+                    if not is_parent(parent, classes[child][ind]):
+                        ind += 1
+                    return is_parent(parent, classes[child][ind])
+                return False
 
 
 for line in range(n):
@@ -47,17 +58,18 @@ for line in range(n):
         child, parents = command.split(':')
         child = child.strip()
         parents = parents.strip().split()
-        for parent in parents:
-            if parent not in classes.keys():
-                classes[parent] = []
-    classes[child] = parents
+    if child not in classes.keys():
+        classes[child] = parents
+    for parent in parents:
+        if parent not in classes[child]:
+            classes[child].extend(parents)
 
 q = int(input())
 
 for line in range(q):
     command = input()
     parent, child = command.split()
-    if is_parent(parent, child) == False:
+    if not is_parent(parent, child):
         print('No')
     else:
         print('Yes')
