@@ -22,8 +22,6 @@ class Loggable:
 
 
 class LoggableList(list, Loggable):
-    def __init__(self):
-        list.__init__(self)
 
     def append(self, __object):
         list.append(self, __object)
