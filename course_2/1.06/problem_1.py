@@ -51,18 +51,11 @@ def is_parent(parent, child):
 
 
 for line in range(n):
-    command = input()
-    if ':' not in command:
-        child, parents = command, []
+    command = input().split()
+    if len(command) == 1:
+        classes[command[0]] = []
     else:
-        child, parents = command.split(':')
-        child = child.strip()
-        parents = parents.strip().split()
-    if child not in classes.keys():
-        classes[child] = parents
-    for parent in parents:
-        if parent not in classes[child]:
-            classes[child].extend(parents)
+        classes[command[0]] = command[2:]
 
 q = int(input())
 
