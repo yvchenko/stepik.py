@@ -61,5 +61,4 @@ q = int(input())
 
 for line in range(q):
     parent, child = input().split()
-    result = "No" if not is_parent(parent, child) else "Yes"
-    print(result)
+    print("No" if not is_parent(parent, child) else "Yes")
