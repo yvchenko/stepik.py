@@ -60,9 +60,6 @@ for line in range(n):
 q = int(input())
 
 for line in range(q):
-    command = input()
-    parent, child = command.split()
-    if not is_parent(parent, child):
-        print('No')
-    else:
-        print('Yes')
+    parent, child = input().split()
+    result = "No" if not is_parent(parent, child) else "Yes"
+    print(result)
