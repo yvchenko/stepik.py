@@ -29,25 +29,14 @@ n = int(input())
 
 
 def is_parent(parent, child):
-    ind = 0
-    if child not in classes.keys():
-        return False
-    elif child == parent:
+    if child == parent:
         return True
-    else:
-        if parent in classes[child]:
+
+    for p in classes.get(child):
+        if is_parent(parent, p):
             return True
-        elif not classes[child]:
-            return False
-        else:
-            if len(classes[child]) == 1:
-                return is_parent(parent, classes[child][ind])
-            else:
-                while ind + 1 < len(classes[child]):
-                    if not is_parent(parent, classes[child][ind]):
-                        ind += 1
-                    return is_parent(parent, classes[child][ind])
-                return False
+
+    return False
 
 
 for line in range(n):
