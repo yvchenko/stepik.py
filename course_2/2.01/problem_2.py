@@ -28,3 +28,35 @@
 # Выведите в отдельной строке имя каждого исключения, обработку которого можно удалить из кода, не изменив при этом
 # поведение программы. Имена следует выводить в том же порядке, в котором они идут во входных данных.
 
+exc_parents = {}
+n = int(input())
+exceptions = []
+
+
+def is_parent(parent, child):
+    if child == parent:
+        return True
+
+    for p in exc_parents.get(child):
+        if is_parent(parent, p):
+            return True
+
+    return False
+
+
+for line in range(n):
+    command = input().split()
+    if len(command) == 1:
+        exc_parents[command[0]] = []
+    else:
+        exc_parents[command[0]] = command[2:]
+
+m = int(input())
+
+for line in range(m):
+    command = input()
+    for exception in exceptions:
+        if is_parent(exception, command):
+            print(command)
+            break
+    exceptions.append(command)
