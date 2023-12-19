@@ -5,5 +5,5 @@
 # Реализуйте функцию mod_checker(x, mod=0), которая будет генерировать лямбда функцию от одного аргумента y,
 # которая будет возвращать True, если остаток от деления y на x равен mod, и False иначе.
 
-def mod_checker(y, mod=0):
-    return lambda x, rest=mod: x % y == rest
+def mod_checker(x, mod=0):
+    return lambda y, rest=mod: y % x == rest
