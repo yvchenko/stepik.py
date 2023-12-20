@@ -5,16 +5,15 @@
 s, t = input(), input()
 
 
-def find_string(s, t):
+def count_string_occurrences(string, substring):
+    occurrences = set()
     start = 0
-    while start <= len(s):
-        t_index = s.find(t, start)
-        yield t_index
+
+    while start <= len(string):
+        t_index = string.find(substring, start)
+        occurrences.add(t_index)
         start += 1
 
-
-def count_string_occurrences(s, t):
-    occurrences = set(find_string(s, t))
     occurrences.remove(-1)
     return len(occurrences)
 
