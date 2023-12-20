@@ -12,20 +12,16 @@
 
 s, a, b = input(), input(), input()
 
-operations = 1
 
-def modify_string(s, a, b):
-    if a not in s:
-        return 0
+def modify_string(s, a, b, operations=0):
+    while operations <= 1000:
+        if a in s:
+            s = s.replace(a, b)
+            operations += 1
+        else:
+            break
 
-    new = s.replace(a, b)
-    if a in new:
-        global operations
-        operations += 1
-        if operations < 1000:
-            return "Impossible"
-        modify_string(new, a, b)
+    return "Impossible" if operations >= 1000 else operations
 
-    return operations
 
 print(modify_string(s, a, b))
