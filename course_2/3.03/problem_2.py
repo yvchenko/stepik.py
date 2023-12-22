@@ -17,8 +17,6 @@ text = requests.get(doc).text
 
 find = re.findall(r"(?:<a.+?href=['\"]?(?:.+?://)?)(\w[a-z.\-\d]+)", text)
 
-find = set(find)
-find = list(find)
-find.sort()
+find = sorted(list(set(find)))
 
 [print(line) for line in find]
